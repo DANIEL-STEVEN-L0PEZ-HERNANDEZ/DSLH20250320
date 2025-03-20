@@ -15,8 +15,8 @@ builder.Services.AddDbContext<Test20250320DbContext>(options =>
 });
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie((o) =>
 {
-    o.LoginPath = new PathString("/Usuarios/login");
-    o.AccessDeniedPath = new PathString("/Usuarios/login");
+    o.LoginPath = new PathString("/Users/login");
+    o.AccessDeniedPath = new PathString("/Users/login");
     o.ExpireTimeSpan = TimeSpan.FromHours(8);
     o.SlidingExpiration = true;
     o.Cookie.HttpOnly = true;

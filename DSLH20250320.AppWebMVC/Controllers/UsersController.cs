@@ -209,17 +209,20 @@ namespace DSLH20250320.AppWebMVC.Controllers
         {
             return _context.Users.Any(e => e.UserId == id);
         }
-        public async Task<IActionResult> Perfil()
+
+
+        [AllowAnonymous]
+        public async Task<IActionResult> Profile()
         {
 
-            var idStr = User.FindFirst("Id")?.Value;
+            var idStr = User.FindFirst("UserId")?.Value;
             int id = int.Parse(idStr);
             var usuario = await _context.Users.FindAsync(id);
             return View(usuario);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Perfil(int id, [Bind("Id,Nombre,Email,Estatus,Rol")] User usuario)
+        public async Task<IActionResult> Profile(int id, [Bind("Id,Nombre,Email,Estatus,Rol")] User usuario)
         {
             if (id != usuario.UserId)
             {
