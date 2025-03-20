@@ -13,7 +13,7 @@ using System.Security.Claims;
 namespace DSLH20250320.AppWebMVC.Controllers
 {
 
-    //[Authorize(Roles = "ADMINISTRADOR")]
+    [Authorize(Roles = "ADMINISTRADOR")]
 
     public class UsersController : Controller
     {
