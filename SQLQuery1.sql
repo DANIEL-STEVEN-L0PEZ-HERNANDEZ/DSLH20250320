@@ -44,3 +44,12 @@ GO
 
 ALTER TABLE Users
 ADD Status TINYINT DEFAULT 1
+
+
+INSERT INTO Users (Username, PasswordHash, Email, Role)
+VALUES
+    ('Root', '827ccb0eea8a706c4c34a16891f84e7b ', 'gerente@gmail.com', 'GERENTE');
+
+INSERT INTO Users (Username, PasswordHash, Email, Role)
+VALUES
+    ('Root', '827ccb0eea8a706c4c34a16891f84e7b ', 'administrador@gmail.com', 'ADMINISTRADOR');

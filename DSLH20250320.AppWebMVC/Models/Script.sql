@@ -42,5 +42,15 @@ CREATE TABLE Users (
 );
 GO
 
-ALTER TABLE Users
+
+ALTER TABLE Users                       --Se le agrega el campo Estatus a la tabla Usuario
 ADD Status TINYINT DEFAULT 1
+
+
+INSERT INTO Users (Username, PasswordHash, Email, Role)  -- Se ingresa correo y contraseña para Gerente
+VALUES
+    ('Root', '827ccb0eea8a706c4c34a16891f84e7b ', 'gerente@gmail.com', 'GERENTE');
+
+INSERT INTO Users (Username, PasswordHash, Email, Role)  -- Se ingresa correo y contraseña para Administrador
+VALUES
+    ('Root', '827ccb0eea8a706c4c34a16891f84e7b ', 'administrador@gmail.com', 'ADMINISTRADOR');
